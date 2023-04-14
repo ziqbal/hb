@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+* * * * * /usr/bin/flock -n /tmp/_TESTS_SAMPLE.lockfile /media/user/DATA/_craft_/hb/cron.sh >> /tmp/_TESTS_SAMPLE.log 2>&1
