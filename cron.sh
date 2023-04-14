@@ -13,7 +13,7 @@ DATE_HMS=${date_array[1]}
 ################################################################
 
 DIR_CACHE=./cache/${DATE_YMD:0:6}
-PATH_LOG=$DIR_CACHE/${DATE_HMS:0:2}.log
+PATH_LOG=$DIR_CACHE/${DATE_YMD:6:2}_${DATE_HMS:0:2}.log
 
 ################################################################
 
