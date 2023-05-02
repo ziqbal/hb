@@ -6,7 +6,6 @@ fatal: loose object
 find .git/objects/ -size 0 -exec rm -f {} \;
 git fetch origin
 
-
 ##############
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
