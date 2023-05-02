@@ -21,7 +21,15 @@ mkdir -p $DIR_CACHE/
 
 ################################################################
 
-MSG=$(date +"%Y-%m-%dT%H:%M:%S.%3N%z")
+T1=$(date +"%Y-%m-%dT%H:%M:%S.%3N%z")
+
+METRIC_PING=$(ping -c 4 8.8.8.8 | tail -1| awk -F '/' '{print $5}')
+
+#echo $METRIC_PING
+
+T2=$(date +"%Y-%m-%dT%H:%M:%S.%3N%z")
+
+MSG=$T1,$T2,$METRIC_PING
 
 ################################################################
 
