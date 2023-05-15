@@ -7,6 +7,17 @@ find .git/objects/ -size 0 -exec rm -f {} \;
 git fetch origin
 
 ##############
+
+crontab -l
+export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes'
+git fetch origin
+git pull
+git add .
+git commit -m "auto" .
+git push
+
+
+##############
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
