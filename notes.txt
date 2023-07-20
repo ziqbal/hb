@@ -44,8 +44,10 @@ GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes' git c
 # Git pull
 GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes' git pull 
 
+# Make sure locale is set appropiatly for date time
+# /etc/default/locale
 
-
+export LC_TIME="en_US.UTF-8"
 
 
 
