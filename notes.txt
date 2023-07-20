@@ -21,6 +21,8 @@ git push
 (PULL FROM LOCAL MACHINE)
 
 
+# On target machine
+
 ##############
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
@@ -31,6 +33,10 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 ssh-keygen -q -t ed25519 -N ''
 # Use following path to safe key /home/user/.ssh/id_ed25519_github_hb
 # Setup github with new public deploy key with write access
+
+git config --global user.email "user@machine.test"
+git config --global user.name "machine"
+
 
 # Command to clone repository
 GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes' git clone git@github.com:ziqbal/hb.git
