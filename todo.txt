@@ -1,6 +1,6 @@
 
 
-- led/light fr "offline"
+- led/light for "offline"
 - alert offline
 - recconect wifi auto
 - offline info in logs
