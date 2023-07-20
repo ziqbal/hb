@@ -48,6 +48,10 @@ echo "<a href='$PATH_LOG'>$PATH_LOG</a>" >> README.md
 
 ################################################################
 
+date -u +"%Y-%m-%dT%H:%M:%S" > latest.txt
+
+################################################################
+
 #GIT_SSH_COMMAND='ssh -i .ssh/id_ed25519_github_hb -o IdentitiesOnly=yes' git clone git@github.com:ziqbal/hb.git
 
 export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes'
