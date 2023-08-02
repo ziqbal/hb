@@ -29,7 +29,16 @@ METRIC_PING=$(ping -c 4 8.8.8.8 | tail -1| awk -F '/' '{print $5}')
 
 T2=$(date +"%Y-%m-%dT%H:%M:%S.%3N%z")
 
-MSG=$T1,$T2,$METRIC_PING
+HOST_NAME=$(hostname)
+
+BAT_ID=$(upower -e | grep BAT)
+
+POWER_STATUS=$(upower -i $BAT_ID|grep state| cut -d ':' -f2 | xargs)
+POWER_PERCENTAGE=$(upower -i $BAT_ID|grep percentage| grep -o "[0-9]*")
+
+MSG=$T1,$T2,$METRIC_PING,$HOST_NAME,$POWER_STATUS,$POWER_PERCENTAGE
+
+echo $MSG;exit
 
 ################################################################
 
