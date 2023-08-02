@@ -52,6 +52,10 @@ MSG=$T1,$T2,$METRIC_PING,$HOST_NAME,$POWER_ONLINE,$POWER_STATUS,$POWER_CAPACITY
 
 ################################################################
 
+git pull --no-edit
+
+################################################################
+
 if [ ! -e "$PATH_LOG" ]           
 then 
     echo $MSG > $PATH_LOG
@@ -75,8 +79,6 @@ date -u +"%Y-%m-%dT%H:%M:%S" > latest.txt
 
 export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes'
 
-git pull --no-edit
-git status
 git add .
 git commit -m "auto" .
 git push
