@@ -31,12 +31,22 @@ T2=$(date +"%Y-%m-%dT%H:%M:%S.%3N%z")
 
 HOST_NAME=$(hostname)
 
-BAT_ID=$(upower -e | grep BAT)
+POWER_ONLINE=$(cat /sys/class/power_supply/AC/online)
 
-POWER_STATUS=$(upower -i $BAT_ID|grep state| cut -d ':' -f2 | xargs)
-POWER_PERCENTAGE=$(upower -i $BAT_ID|grep percentage| grep -o "[0-9]*")
+if [[ -f /sys/class/power_supply/BAT0/status ]]; then
+	POWER_STATUS=$(cat /sys/class/power_supply/BAT0/status)
+	POWER_CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+else
+	POWER_STATUS=$(cat /sys/class/power_supply/BAT1/status)
+	POWER_CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
+fi
 
-MSG=$T1,$T2,$METRIC_PING,$HOST_NAME,$POWER_STATUS,$POWER_PERCENTAGE
+#BAT_ID=$(upower -e | grep BAT)
+
+#POWER_STATUS=$(upower -i $BAT_ID|grep state| cut -d ':' -f2 | xargs)
+#POWER_PERCENTAGE=$(upower -i $BAT_ID|grep percentage| grep -o "[0-9]*")
+
+MSG=$T1,$T2,$METRIC_PING,$HOST_NAME,$POWER_ONLINE,$POWER_STATUS,$POWER_CAPACITY
 
 echo $MSG;exit
 
