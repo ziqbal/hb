@@ -75,6 +75,10 @@ date -u +"%Y-%m-%dT%H:%M:%S" > latest.txt
 
 ################################################################
 
+rm -f _*
+
+################################################################
+
 #GIT_SSH_COMMAND='ssh -i .ssh/id_ed25519_github_hb -o IdentitiesOnly=yes' git clone git@github.com:ziqbal/hb.git
 
 export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_github_hb -o IdentitiesOnly=yes'
