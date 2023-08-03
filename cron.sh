@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 
-if [ "$(type -t fswebcam2)" == "file" ]; then
-    echo "fswebcam OK"
+if [ "$(type -t fswebcam)" == "file" ]; then
+	fswebcam --verbose -S 15 -D 1 -r 1280x1024 --jpeg 70 cache/latest.jpg
 fi
 
 exit
