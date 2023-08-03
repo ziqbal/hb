@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-if [ "$(type -t fswebcam)" == "file" ]; then
+if [ "$(type -t fswebcam2)" == "file" ]; then
     echo "fswebcam OK"
 fi
 
