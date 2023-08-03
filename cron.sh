@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+
+if [ "$(type -t fswebcam)" == "file" ]; then
+    echo "fswebcam OK"
+fi
+
+exit
+
 cd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 ################################################################
@@ -75,6 +82,12 @@ date -u +"%Y-%m-%dT%H:%M:%S" > latest.txt
 
 ################################################################
 
+if [[ -f "./_s" ]]; then
+
+	#fswebcam --verbose -S 15 -D 1 -r 1280x1024 --jpeg 70 local_latest.jpg
+
+
+fi
 rm -f _*
 
 ################################################################
