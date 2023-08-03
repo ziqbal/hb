@@ -52,7 +52,7 @@ MSG=$T1,$T2,$METRIC_PING,$HOST_NAME,$POWER_ONLINE,$POWER_STATUS,$POWER_CAPACITY
 
 ################################################################
 
-git pull --no-edit
+git pull origin --no-edit
 
 ################################################################
 
